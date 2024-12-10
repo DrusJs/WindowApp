@@ -139,6 +139,11 @@ a {
     cursor: pointer;
 }
 
+.language-select .value img {
+    width: 48px;
+    height: 30px;
+}
+
 
 .language-select .select-head .value {
     padding: 6px 6px 6px 12px;
