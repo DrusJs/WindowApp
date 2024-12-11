@@ -315,6 +315,10 @@ a {
         max-width: calc(100vw - 32px);
     }
 
+    .popup-container {
+        padding: 15px 16px 24px;
+    }
+
     .burger-button {
         display: block;
     }
