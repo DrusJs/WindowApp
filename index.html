@@ -579,12 +579,12 @@
                         if( offsetPoint.visible )
                         {
                             const dx = offsetPoint.x - x;
-                            const dy = offsetPoint.y - (y-82);
+                            const dy = offsetPoint.y - y;
                             const distance = Math.sqrt( dx * dx + dy * dy );
                             const angle = Math.atan2( dy, dx ) * 180 / Math.PI;
                             
                             lineElement.style.left = x + 'px';
-                            lineElement.style.top = (y-82) + 'px';	
+                            lineElement.style.top = y + 'px';	
                             lineElement.style.width = distance + 'px';
                             lineElement.style.transform = 'rotate(' + angle + 'deg)';
                             
