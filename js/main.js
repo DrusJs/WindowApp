@@ -126,7 +126,7 @@ if (languageSelect) {
 
                 document.querySelectorAll('.offset-point').forEach((el, index) => {
                     let info = modelConf2[lang][index].title
-                    el.innerHTML = info.replaceAll(' ', '</br >')
+                    el.innerHTML = info.replaceAll(' ', '<br />')
                 })
                 document.querySelector('.topic-title').innerHTML = titlePage[lang]
                 document.querySelector('.footer-inner .title').innerHTML = titlePage[lang]
