@@ -102,6 +102,8 @@ const modelConf2 = [
     ],
 ]
 
+const titlePage = ['Амёба', 'Амёба', 'Amoeba']
+
 const languageSelect = document.querySelector('.language-select')
 
 if (languageSelect) {
@@ -126,6 +128,8 @@ if (languageSelect) {
                     let info = modelConf2[lang][index].title
                     el.innerHTML = info.replaceAll(' ', '</br >')
                 })
+                document.querySelector('.topic-title').innerHTML = titlePage[lang]
+                document.querySelector('.footer-inner .title').innerHTML = titlePage[lang]
             }
         })
     })
