@@ -123,7 +123,8 @@ if (languageSelect) {
                 selectValue.innerHTML = e.currentTarget.innerHTML
 
                 document.querySelectorAll('.offset-point').forEach((el, index) => {
-                    el.innerHTML = modelConf2[lang][index].title
+                    let info = modelConf2[lang][index].title
+                    el.innerHTML = info.replaceAll(' ', '</br >')
                 })
             }
         })
