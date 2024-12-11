@@ -492,6 +492,7 @@
             let lang = document.querySelector(".language-select .select-dropdown .value.active").dataset.lang
 
             popupTitle.innerHTML = text
+	    text = text.replaceAll('<br />', ' ')
             popupText.innerHTML = modelConf[lang].find(item => item.title == text).description
         }
         
