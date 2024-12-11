@@ -492,7 +492,7 @@
             let lang = document.querySelector(".language-select .select-dropdown .value.active").dataset.lang
 
             popupTitle.innerHTML = text
-	    text = text.replaceAll('<br />', ' ')
+	    text = text.replaceAll('<br />', ' ').replaceAll('<br>', ' ')
             popupText.innerHTML = modelConf[lang].find(item => item.title == text).description
         }
         
@@ -500,7 +500,7 @@
 
         const pointerdown = ( pointElement, text ) =>
         {
-            text = text.replaceAll('<br />', ' ')
+            text = text.replaceAll('<br />', ' ').replaceAll('<br>', ' ')
             if (document.querySelector('.offset-point.selected')) { document.querySelector('.offset-point.selected').classList.remove('selected') }
 
             pointElement.classList.add('selected')
