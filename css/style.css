@@ -66,10 +66,31 @@ a {
 }
 
 
-.header-actions {
+.header-actions,
+.header-menu {
     display: flex;
     align-items: center;
     gap: 18px;
+}
+
+.burger-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: none;
+}
+
+.burger-button svg path {
+    fill: #016397;
+}
+
+.burger-button svg:nth-child(2),
+.burger-button.active svg:nth-child(1) {
+    display: none;
+}
+
+.burger-button.active svg:nth-child(2) {
+    display: block;
 }
 
 .action-button {
@@ -275,10 +296,51 @@ a {
     color: #FFFFFF;
 }
 
+@media (max-width: 879px) {
+    .header-inner,
+    .footer-inner {
+        height: auto;
+        min-height: 82px;
+        padding: 10px 16px;
+    }
+    .popup-container {
+        top: 16px;
+        right: 16px;
+        width: 440px;
+        max-width: calc(100vw - 32px);
+    }
+
+    .burger-button {
+        display: block;
+    }
+    
+    .header-menu {
+        position: absolute;
+        top: 86px;
+        right: 10px;
+        z-index: 3;
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 6px;
+        border-radius: 15px;
+        background-color: #E7F2FF;
+        box-shadow: 0 6px 20px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .header-menu.active {
+        display: grid;
+    }
+
+    .language-select {
+        grid-column: span 3;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
 
 @media (hover: hover) {
     .action-button:not(.disable):hover {
         /* background-color: #3181b7; */
     }
-    
 }

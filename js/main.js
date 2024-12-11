@@ -40,3 +40,13 @@ if (languageSelect) {
         })
     })
 }
+
+const burgerButton = document.querySelector('.burger-button')
+const burgerMenu = document.querySelector('.header-menu')
+
+if (burgerButton) {
+    burgerButton.addEventListener('click', (e) => {
+        e.currentTarget.classList.toggle('active')
+        burgerMenu.classList.toggle('active')
+    })
+}
