@@ -13,7 +13,7 @@
     <div class="wrapper">
         <header class="header">
             <div class="header-inner">
-                <h1 class="topic-title">Lesson topic title</h1>
+                <h1 class="topic-title">Амеба</h1>
                 <div class="header-actions">
                     <div class="header-menu">
                         <button class="action-button active">
@@ -109,7 +109,7 @@
         </main>
         <footer class="footer">
             <div class="footer-inner">
-                <h2 class="title">Lesson topic title</h2>
+                <h2 class="title">Амеба</h2>
                 <img src="image/logo.png" alt="Logo" width="149" height="32">
             </div>
         </footer>
@@ -537,7 +537,7 @@
                 }
                 else if( type == 'offset' )
                 {			
-                    pointElement.onpointerdown = ( event ) => pointerdown( event.target, text );
+                    pointElement.onpointerdown = ( event ) => pointerdown( event.target, event.target.innerHTML );
                     langItems.push(pointElement)
                 }
             } );
