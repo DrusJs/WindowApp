@@ -500,6 +500,9 @@
         const pointerdown = ( pointElement, text ) =>
         {
             text = text.replaceAll('<br />', ' ')
+            if (document.querySelector('.offset-point.selected')) { document.querySelector('.offset-point.selected').classList.remove('selected') }
+
+            pointElement.classList.add('selected')
             console.log( text );
             changePopupInfo(text)
         };

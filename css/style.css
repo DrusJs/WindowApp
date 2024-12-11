@@ -302,6 +302,61 @@ a {
     font-weight: 500;
 }
 
+#view3d,
+#layer {
+    position:absolute; 
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+#layer {
+    pointer-events:none;
+    touch-action:none;
+    user-select:none;
+
+}
+
+.surface-point {
+    position:absolute;
+    transform:translate( -50%, -50% );
+    background-color:black;
+    border-radius:50%;
+    width:4px;
+    height:4px;
+    outline:solid 1px white;
+}
+
+.offset-point {
+    position:absolute;
+    transform:translate( -50%, -50% );
+    background-color:black;
+    padding:10px;
+    border-radius:10px;
+    pointer-events:auto !important;
+    cursor:pointer;
+    color:white;
+    text-align:center;
+    font-family:sans-serif;
+}
+
+.offset-point.selected  {
+    background-color:green;
+}
+
+.line {
+    position:absolute;
+    width:50px;
+    background-color:black;
+    height:1px;
+    transform-origin:top left;
+}
+
+.hidden {
+    display:none;
+}
+
 @media (max-width: 879px) {
     .header-inner,
     .footer-inner {
