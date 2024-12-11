@@ -130,6 +130,14 @@ if (languageSelect) {
                 })
                 document.querySelector('.topic-title').innerHTML = titlePage[lang]
                 document.querySelector('.footer-inner .title').innerHTML = titlePage[lang]
+
+                
+                if (document.querySelector('.popup-container.active')) {
+                    document.querySelector('.popup-container.active').classList.remove('active')
+                }
+                if (document.querySelector('.offset-point.selected')) {
+                    document.querySelector('.offset-point.selected').classList.remove('selected')
+                }
             }
         })
     })
