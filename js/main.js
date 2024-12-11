@@ -50,3 +50,14 @@ if (burgerButton) {
         burgerMenu.classList.toggle('active')
     })
 }
+
+const popupContainer = document.querySelector('#popup-info')
+const popupTitle = popupContainer.querySelector('.popup-title span')
+const popupText = popupContainer.querySelector('.popup-text')
+
+function changePopupInfo() {
+    if (!popupContainer.classList.contains('active')) { popupContainer.classList.add('active') }
+
+    popupTitle.innerHTML = ''
+    popupText.innerHTML = ''
+}
