@@ -397,6 +397,7 @@ a {
     padding: 10px 30px;
     background-color: #016397;
     color: #FFFFFF;
+    border-radius: 16px 16px 0 0;
 }
 
 .topic-title {
