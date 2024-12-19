@@ -141,7 +141,7 @@ function initSettingsAction(type, item) {
             changeBackground(item.dataset.color)
           break;
         case 'theme':
-            changeTheme(item.dataset.theme)
+            changeTheme()
           break;
       }
 }
@@ -174,7 +174,7 @@ function changeFontSize(size) {
     document.body.classList.add(`font-${size}`);
 }
 
-function changeTheme(theme) {
+function changeTheme() {
     document.body.classList.toggle('dark-theme');
 }
 
