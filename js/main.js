@@ -141,7 +141,7 @@ function initSettingsAction(type, item) {
             changeBackground(item.dataset.color)
           break;
         case 'theme':
-            changeFontSize(item.dataset.theme)
+            changeTheme(item.dataset.theme)
           break;
       }
 }
