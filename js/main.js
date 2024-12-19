@@ -35,42 +35,6 @@ const titlePage = ['Амёба', 'Амёба', 'Amoeba']
 
 const languageSelect = document.querySelector('.language-select')
 
-// if (languageSelect) {
-//     const selectOptions = languageSelect.querySelectorAll('.select-dropdown .value')
-//     const selectValue = languageSelect.querySelector('.select-head .value')
-
-//     languageSelect.addEventListener('click', (e)=>{
-//         e.currentTarget.classList.toggle('active')
-//     })
-
-//     selectOptions.forEach(option => {
-//         option.addEventListener('click', (e) => {
-//             if (!e.currentTarget.classList.contains('active')) {
-//                 const active = languageSelect.querySelector('.value.active')
-//                 const lang = e.currentTarget.dataset.lang
-
-//                 active.classList.remove('active')
-//                 e.currentTarget.classList.add('active')
-//                 selectValue.innerHTML = e.currentTarget.innerHTML
-
-//                 document.querySelectorAll('.offset-point').forEach((el, index) => {
-//                     let info = modelConf2[lang][index].title
-//                     el.innerHTML = info.replaceAll(' ', '<br />')
-//                 })
-//                 document.querySelector('.footer-inner .title').innerHTML = titlePage[lang]
-
-                
-//                 if (document.querySelector('.popup-container.active')) {
-//                     document.querySelector('.popup-container.active').classList.remove('active')
-//                 }
-//                 if (document.querySelector('.offset-point.selected')) {
-//                     document.querySelector('.offset-point.selected').classList.remove('selected')
-//                 }
-//             }
-//         })
-//     })
-// }
-
 const burgerButton = document.querySelector('.burger-button')
 const burgerMenu = document.querySelector('.header-menu')
 
@@ -158,13 +122,17 @@ function changeLanguage(lang) {
 
     elements.forEach(el => {
         const key = el.dataset.i18n;
-        console.log(key)
         const text = key.split('.').reduce((o, i) => o[i], localeObject[lang]);
 
         if (text) {
             el.textContent = text;
         }
     });
+
+    document.querySelectorAll('.offset-point').forEach((el, index) => {
+        const info = localeObject[lang][index].title
+        el.innerHTML = info.replaceAll(' ', '<br />');
+    })
 
     if (active) { active.click() }
 }
