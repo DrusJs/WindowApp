@@ -172,7 +172,7 @@ function changeFontSize(size) {
 }
 
 function changeTheme(theme) {
-    document.body.classList.toggle('dark-theme', theme === 'dark');
+    document.body.classList.toggle('dark-theme');
 }
 
 const localeObject = {
@@ -227,7 +227,12 @@ const localeObject = {
                 description: "",
                 actionA: "Action 1",
                 actionB: "Action 2"
+            },
+            sections: {
+                first: "Раздел 1",
+                second: "Раздел 2"
             }
+            
     },
     
     kz: {
@@ -275,6 +280,10 @@ const localeObject = {
         setTheme: {
             light: "Жарық",
             dark: "Қараңғы",
+        },
+        sections: {
+            first: "Раздел 1",
+            second: "Раздел 2"
         }
     },
     
@@ -323,6 +332,10 @@ const localeObject = {
         setTheme: {
             light: "Light",
             dark: "Dark",
+        },
+        sections: {
+            first: "Part 1",
+            second: "Part 2"
         }
     }
 }
