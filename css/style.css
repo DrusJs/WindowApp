@@ -45,6 +45,18 @@ body {
     font-family: var(--font-roboto);
 }
 
+body.font-small {
+    font-size: 12px;
+}
+
+body.font-medium {
+    font-size: 16px;
+}
+
+body.font-large {
+    font-size: 20px;
+}
+
 a {
     text-decoration: none;
 }
@@ -138,16 +150,20 @@ a {
 
 
 .action-button.active {
-    background-color: #3076A4;
+    background-color: #006397;
 }
 
 
 .action-button.disable {
     background-color: #DCDEE4;
     pointer-events: none;
+    border: 1px solid #DCDEE4;
 }
-.action-button.disable svg path {
+.action-button.disable svg.fill path {
     fill: #A0A3A9;
+}
+.action-button.disable svg.stroke path {
+    stroke: #A0A3A9;
 }
 
 .language-select {
@@ -167,7 +183,7 @@ a {
     gap: 6px;
     color: #000000;
     font-family: var(--font-roboto);
-    font-size: 18px;
+    font-size: 1.125rem;
     padding: 6px 12px;
     border-radius: 15px;
     cursor: pointer;
@@ -177,7 +193,6 @@ a {
     width: 48px;
     height: 30px;
 }
-
 
 .language-select .select-head .value {
     padding: 6px 6px 6px 12px;
@@ -238,7 +253,7 @@ a {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #006397;
     font-weight: 700;
 }
@@ -311,7 +326,7 @@ a {
 }
 
 .primary-button {
-    font-size: 14px;
+    font-size: 0.875rem;
     background-color: #E7F2FF;
     color: #006397;
     padding: 10px 24px;
@@ -340,7 +355,7 @@ a {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 500;
     font-family: var(--font-roboto);
     margin-bottom: 20px;
@@ -348,7 +363,7 @@ a {
 }
 
 .popup-text {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: var(--font-roboto);
     line-height: 120%;
     padding-right: 25px;
@@ -367,7 +382,7 @@ a {
     background-color: transparent;
     border: none;
     padding: 0;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
     font-family: var(--font-roboto);
     color: #027BB9;
@@ -385,7 +400,7 @@ a {
 }
 
 .topic-title {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 500;
 }
 
@@ -444,6 +459,56 @@ a {
     display:none;
 }
 
+body.dark-theme .primary-button {
+    background-color: #08334E;
+    color: #92CCFF;
+}
+body.dark-theme .primary-button.active {
+    background-color: #92CCFF;
+    color: #08334E;    
+}
+body.dark-theme .header-inner {
+    background-color: #08334E;
+}
+body.dark-theme .settings-dropdown {
+    background-color: #08334E;
+    color: #92CCFF;
+}
+body.dark-theme .action-button {
+    border: 1px solid #92CCFF;
+}
+body.dark-theme .action-button.active {
+    background-color: #92CCFF;
+}
+body.dark-theme .action-button svg.fill path {
+    fill: #92CCFF;
+}
+body.dark-theme .action-button.active svg.fill path {
+    fill: #08334E;
+}
+body.dark-theme .action-button svg.stroke path {
+    stroke: #92CCFF;    
+}
+body.dark-theme .action-button.active svg.stroke path {
+    stroke: #08334E;    
+}
+body.dark-theme .footer-inner {
+    background-color: #92CCFF;
+    color: #08334E;
+}
+body.dark-theme .settings-title svg path {
+    fill: #92CCFF;
+}
+body.dark-theme .settings-title svg path.invert {
+    fill: #08334E;
+}
+body.dark-theme {
+    
+}
+body.dark-theme {
+    
+}
+
 @media (max-width: 879px) {
     .header-inner,
     .footer-inner {
@@ -467,7 +532,7 @@ a {
     }
 
     .topic-title {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .header-menu {
