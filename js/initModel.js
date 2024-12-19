@@ -418,6 +418,7 @@ import
                 else if( type == 'offset' )
                 {			
                     pointElement.onpointerdown = ( event ) => pointerdown( event.target, event.target.innerHTML );
+                    pointElement.onclick = ( event ) => pointerdown( event.target, event.target.innerHTML );
                     langItems.push(pointElement)
                 }
             } );
