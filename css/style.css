@@ -321,7 +321,7 @@ a {
     z-index: 1;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 400ms ease-in;
+    /* transition: opacity 400ms ease-in; */
 }
 
 .parts-absolute {
