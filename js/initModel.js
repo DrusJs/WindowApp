@@ -371,7 +371,7 @@ import
             popupText.innerHTML = modelConf[lang].find(item => item.title == text).description
         }
         
-        layerVisibility.onclick = ( event ) => layer.hidden = !event.currentTarget.classList.contains('active');
+        layerVisibility.onclick = ( event ) => layer.hidden = event.currentTarget.classList.contains('active');
 
         const pointerdown = ( pointElement, text ) =>
         {
