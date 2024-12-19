@@ -49,12 +49,20 @@ html:has(body.font-small) {
     font-size: 12px;
 }
 
+html:has(body.font-small) .settings-dropdown {
+    width: 240px;
+}
+
 html:has(body.font-medium) {
     font-size: 16px;
 }
 
 html:has(body.font-large) {
     font-size: 20px;
+}
+
+html:has(body.font-large) .settings-dropdown {
+    width: 350px;
 }
 
 a {
@@ -499,6 +507,9 @@ body.dark-theme .action-button.active svg.stroke path {
 body.dark-theme .footer-inner {
     background-color: #92CCFF;
     color: #08334E;
+}
+body.dark-theme .settings-title {
+    color: #92CCFF;
 }
 body.dark-theme .settings-title svg path {
     fill: #92CCFF;
