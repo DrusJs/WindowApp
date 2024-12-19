@@ -527,6 +527,9 @@ body.dark-theme .popup-container {
     background-color: #08334E;
     color: #92CCFF;
 }
+body.dark-theme .popup-close svg path {
+    stroke: #92CCFF;
+}
 
 @media (max-width: 879px) {
     .header-inner,
