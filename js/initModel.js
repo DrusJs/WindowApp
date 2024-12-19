@@ -81,7 +81,7 @@ import
                 
                 domContainer.appendChild( renderer.domElement );
     
-                light = new DirectionalLight( 0xFFFFFF, 1 );
+                light = new DirectionalLight( 0xFFFFFF00, 0 );
                 light.position.set( 500, 500, 500 );
                 
                 
@@ -89,7 +89,7 @@ import
                 scene.add( camera = new PerspectiveCamera( 45, 1.0, 10, 10000 ) );
                 scene.add( container = new Group() );
                 // scene.add( new GridHelper( 100, 100, 0xEEEEEE, 0xEEEEEE ) );
-                scene.add( new AmbientLight( 0xFFFFFF, 1 ) );
+                scene.add( new AmbientLight( 0xFFFFFF00, 0 ) );
                 scene.add( light );
 
 
