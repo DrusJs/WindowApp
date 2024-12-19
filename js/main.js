@@ -130,6 +130,7 @@ function changeLanguage(lang) {
     });
 
     document.querySelectorAll('.offset-point').forEach((el, index) => {
+        console.log(localeObject, localeObject[lang])
         const info = localeObject[lang][index].title
         el.innerHTML = info.replaceAll(' ', '<br />');
     })
