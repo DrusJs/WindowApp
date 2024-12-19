@@ -379,7 +379,11 @@ import
             if (document.querySelector('.offset-point.selected')) { document.querySelector('.offset-point.selected').classList.remove('selected') }
 
             pointElement.classList.add('selected')
-            console.log( text );
+            
+            document.querySelector('.burger-button').classList.remove('active')
+            document.querySelector('.header-menu').classList.remove('active')
+            document.querySelector('.settings-dropdown').classList.remove('active')
+            
             changePopupInfo(text)
         };
 

@@ -154,6 +154,7 @@ function changeBackground(color) {
 
 function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-i18n]');
+    const active = document.querySelector('.offset-point.selected')
 
     elements.forEach(el => {
         const key = el.dataset.i18n;
@@ -164,6 +165,8 @@ function changeLanguage(lang) {
             el.textContent = text;
         }
     });
+
+    if (active) { active.click() }
 }
 
 function changeFontSize(size) {
