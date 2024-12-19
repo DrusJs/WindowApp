@@ -455,6 +455,10 @@ a {
     transform-origin:top left;
 }
 
+.logo-dark {
+    display: none;
+}
+
 .hidden {
     display:none;
 }
@@ -502,11 +506,11 @@ body.dark-theme .settings-title svg path {
 body.dark-theme .settings-title svg path.invert {
     fill: #08334E;
 }
-body.dark-theme {
-    
+body.dark-theme .logo-dark {
+    display: block;
 }
-body.dark-theme {
-    
+body.dark-theme .logo-light {
+    display: none;
 }
 
 @media (max-width: 879px) {
