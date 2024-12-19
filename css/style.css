@@ -45,15 +45,15 @@ body {
     font-family: var(--font-roboto);
 }
 
-body.font-small {
+html:has(body.font-small) {
     font-size: 12px;
 }
 
-body.font-medium {
+html:has(body.font-medium) {
     font-size: 16px;
 }
 
-body.font-large {
+html:has(body.font-large) {
     font-size: 20px;
 }
 
@@ -363,7 +363,6 @@ a {
 }
 
 .popup-text {
-    font-size: 1rem;
     font-family: var(--font-roboto);
     line-height: 120%;
     padding-right: 25px;
