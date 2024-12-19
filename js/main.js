@@ -134,7 +134,7 @@ function changeLanguage(lang) {
         const info = localeObject[lang].model[index].title
         el.innerHTML = info.replaceAll(' ', '<br />');
     })
-
+    console.log(active)
     if (active) { active.click() }
 }
 
