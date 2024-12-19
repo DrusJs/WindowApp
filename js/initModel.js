@@ -380,9 +380,9 @@ import
 
             pointElement.classList.add('selected')
             
-            document.querySelector('.burger-button').classList.remove('active')
-            document.querySelector('.header-menu').classList.remove('active')
-            document.querySelector('.settings-dropdown').classList.remove('active')
+            // document.querySelector('.burger-button').classList.remove('active')
+            // document.querySelector('.header-menu').classList.remove('active')
+            // document.querySelector('.settings-dropdown').classList.remove('active')
 
             changePopupInfo(text)
         };
@@ -417,7 +417,7 @@ import
                 }
                 else if( type == 'offset' )
                 {			
-                    pointElement.onpointerdown = ( event ) => pointerdown( event.target, event.target.innerHTML );
+                    // pointElement.onpointerdown = ( event ) => pointerdown( event.target, event.target.innerHTML );
                     pointElement.onclick = ( event ) => pointerdown( event.target, event.target.innerHTML );
                     langItems.push(pointElement)
                 }
