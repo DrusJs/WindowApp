@@ -491,6 +491,10 @@ a {
         align-self: center;
         justify-self: center;
     }
+
+    .settings-dropdown {
+        right: 16px;
+    }
 }
 
 

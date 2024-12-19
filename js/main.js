@@ -12,6 +12,7 @@ if (popupCloseButtons.length > 0) {
 }
 
 const headerActionButtons = document.querySelectorAll('.action-button')
+const settingsContainer = document.querySelector('.settings-dropdown')
 
 if (headerActionButtons.length > 0) {
     headerActionButtons.forEach(button => {
@@ -19,7 +20,10 @@ if (headerActionButtons.length > 0) {
             e.currentTarget.classList.toggle('active')
             
             if (e.currentTarget.classList.contains('js-settings-show')) {
-                document.querySelector('.settings-dropdown').classList.toggle('active')
+                settingsContainer.classList.toggle('active')
+                burgerMenu.classList.remove('active')
+                burgerButton.classList.remove('active')
+                
             }
         })
     })
@@ -72,8 +76,10 @@ const burgerMenu = document.querySelector('.header-menu')
 
 if (burgerButton) {
     burgerButton.addEventListener('click', (e) => {
+        
         e.currentTarget.classList.toggle('active')
         burgerMenu.classList.toggle('active')
+        settingsContainer.classList.remove('active')
     })
 }
 
