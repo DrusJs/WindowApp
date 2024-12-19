@@ -91,6 +91,7 @@ import
                 // scene.add( new GridHelper( 100, 100, 0xEEEEEE, 0xEEEEEE ) );
                 scene.add( new AmbientLight( 0xFFFFFF, 1 ) );
                 scene.add( light );
+                renderer.setClearColor( 0xFF0000 );
 
 
                 controls = new OrbitControls( camera, renderer.domElement );
