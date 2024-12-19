@@ -74,8 +74,8 @@ import
 
             const init = () =>
             {			
-                renderer = new WebGLRenderer( { antialias:true } );
-                renderer.setClearColor( 0xFFFFFF00 );
+                renderer = new WebGLRenderer({ antialias: true, alpha: true }); // Включаем alpha
+                renderer.setClearColor(0xFFFFFF, 0);
                 renderer.outputColorSpace = SRGBColorSpace;
                 renderer.setPixelRatio( window.devicePixelRatio );
                 
