@@ -364,10 +364,10 @@ import
 
         function changePopupInfo(text) {
             if (!popupContainer.classList.contains('active')) { popupContainer.classList.add('active') }
-            let lang = document.querySelector(".language-select .select-dropdown .value.active").dataset.lang
+            let lang = document.querySelector(".active[data-lang]").dataset.lang
 
             popupTitle.innerHTML = text
-	    text = text.replaceAll('<br />', ' ').replaceAll('<br>', ' ')
+	        text = text.replaceAll('<br />', ' ').replaceAll('<br>', ' ')
             popupText.innerHTML = modelConf[lang].find(item => item.title == text).description
         }
         

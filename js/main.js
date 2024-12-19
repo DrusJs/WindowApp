@@ -282,8 +282,8 @@ const localeObject = {
             dark: "Қараңғы",
         },
         sections: {
-            first: "Раздел 1",
-            second: "Раздел 2"
+            first: "1 Бөлім",
+            second: "2 Бөлім"
         }
     },
     
