@@ -114,9 +114,11 @@ if (toggleSettings.length > 0) {
                 if (next) {
                     next.classList.add('active')
                     initSettingsAction(container.dataset.type, next)
+                    console.log(container.dataset.type)
                 } else {
                     first.classList.add('active')
                     initSettingsAction(container.dataset.type, first)
+                    console.log(container.dataset.type)
                 }
             })
         })
@@ -124,8 +126,10 @@ if (toggleSettings.length > 0) {
 }
 
 function initSettingsAction(type, item) {
+    console.log(type)
     switch (type) {
         case 'language':
+            console.log("Init")
             changeLanguage(item.dataset.lang)
           break;
           case 'fontsize':
@@ -147,9 +151,12 @@ function changeBackground(color) {
 }
 
 function changeLanguage(lang) {
+    console.log(lang)
     const elements = document.querySelectorAll('[data-i18n]');
+    console.log(lang)
 
     elements.forEach(el => {
+        console.log(el)
         const key = el.dataset.i18n;
         const text = key.split('.').reduce((o, i) => o[i], localeObject[lang]);
 
