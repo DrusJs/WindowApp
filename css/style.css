@@ -523,6 +523,10 @@ body.dark-theme .logo-dark {
 body.dark-theme .logo-light {
     display: none;
 }
+body.dark-theme .popup-container {
+    background-color: #08334E;
+    color: #92CCFF;
+}
 
 @media (max-width: 879px) {
     .header-inner,
