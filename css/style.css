@@ -62,7 +62,7 @@ a {
     align-items: center;
     gap: 30px;
     padding: 10px 30px;
-    background-color: #E7F2FF;
+    background-color: #E5F1FE;
 }
 
 
@@ -94,12 +94,12 @@ a {
 }
 
 .action-button {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    background-color: #016397;
-    border-radius: 100%;
-    border: 2px solid #E7F2FF;
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #006397;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,26 +108,39 @@ a {
     box-shadow: 0 0 0 1px transparent;
 }
 
-.action-button svg:nth-child(2),
-.action-button.active svg:first-child {
-    display: none;
+.profile-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.action-button.single-svg.active svg:first-child {
-    display: block;
+
+
+.profile-button img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    object-position: center;
 }
 
-.action-button.active svg:nth-child(2) {
-    display: block;
+.action-button.active svg.fill path {
+    fill: #FFFFFF;
 }
+.action-button.active svg.stroke path {
+    stroke: #FFFFFF;
+}
+
 
 .action-button.active {
     background-color: #3076A4;
 }
 
-.action-button.single-svg.active {
-    box-shadow: 0 0 0 1px #016397;
-}
 
 .action-button.disable {
     background-color: #DCDEE4;
@@ -183,6 +196,57 @@ a {
     gap: 6px;
 }
 
+.settings-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 90px;
+    z-index: 2;
+    background-color: #ECF3FF;
+    padding: 20px 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px 2px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    gap: 10px;   
+    width: 290px; 
+    color: #006397;
+}
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bgcol-toggle span {
+    width: 50px;
+    height: 20px;
+    min-width: 50px;
+    border: 1px solid #006397;
+    border-radius: 3px;
+}
+
+.settings-val span {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+}
+.settings-val span.active {
+    display: block;
+}
+
+.settings-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #006397;
+    font-weight: 700;
+}
+
+.settings-dropdown.active {
+    display: flex;
+}
+
 .language-select.active .select-dropdown {
     display: flex;
 }
@@ -211,7 +275,6 @@ a {
 
 .main {
     flex: 1 0 auto;
-    background-image: url(../image/bg-image.webp);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -235,6 +298,29 @@ a {
     opacity: 0;
     pointer-events: none;
     transition: opacity 400ms ease-in;
+}
+
+.parts-absolute {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.primary-button {
+    font-size: 14px;
+    background-color: #E7F2FF;
+    color: #006397;
+    padding: 10px 24px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+}
+.primary-button.active {
+    background-color: #006397;
+    color: #E7F2FF;    
 }
 
 .popup-container.active {

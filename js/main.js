@@ -17,6 +17,10 @@ if (headerActionButtons.length > 0) {
     headerActionButtons.forEach(button => {
         button.addEventListener('click', (e)=>{
             e.currentTarget.classList.toggle('active')
+            
+            if (e.currentTarget.classList.contains('js-settings-show')) {
+                document.querySelector('.settings-dropdown').classList.toggle('active')
+            }
         })
     })
 }
@@ -106,42 +110,41 @@ const titlePage = ['Амёба', 'Амёба', 'Amoeba']
 
 const languageSelect = document.querySelector('.language-select')
 
-if (languageSelect) {
-    const selectOptions = languageSelect.querySelectorAll('.select-dropdown .value')
-    const selectValue = languageSelect.querySelector('.select-head .value')
+// if (languageSelect) {
+//     const selectOptions = languageSelect.querySelectorAll('.select-dropdown .value')
+//     const selectValue = languageSelect.querySelector('.select-head .value')
 
-    languageSelect.addEventListener('click', (e)=>{
-        e.currentTarget.classList.toggle('active')
-    })
+//     languageSelect.addEventListener('click', (e)=>{
+//         e.currentTarget.classList.toggle('active')
+//     })
 
-    selectOptions.forEach(option => {
-        option.addEventListener('click', (e) => {
-            if (!e.currentTarget.classList.contains('active')) {
-                const active = languageSelect.querySelector('.value.active')
-                const lang = e.currentTarget.dataset.lang
+//     selectOptions.forEach(option => {
+//         option.addEventListener('click', (e) => {
+//             if (!e.currentTarget.classList.contains('active')) {
+//                 const active = languageSelect.querySelector('.value.active')
+//                 const lang = e.currentTarget.dataset.lang
 
-                active.classList.remove('active')
-                e.currentTarget.classList.add('active')
-                selectValue.innerHTML = e.currentTarget.innerHTML
+//                 active.classList.remove('active')
+//                 e.currentTarget.classList.add('active')
+//                 selectValue.innerHTML = e.currentTarget.innerHTML
 
-                document.querySelectorAll('.offset-point').forEach((el, index) => {
-                    let info = modelConf2[lang][index].title
-                    el.innerHTML = info.replaceAll(' ', '<br />')
-                })
-                document.querySelector('.topic-title').innerHTML = titlePage[lang]
-                document.querySelector('.footer-inner .title').innerHTML = titlePage[lang]
+//                 document.querySelectorAll('.offset-point').forEach((el, index) => {
+//                     let info = modelConf2[lang][index].title
+//                     el.innerHTML = info.replaceAll(' ', '<br />')
+//                 })
+//                 document.querySelector('.footer-inner .title').innerHTML = titlePage[lang]
 
                 
-                if (document.querySelector('.popup-container.active')) {
-                    document.querySelector('.popup-container.active').classList.remove('active')
-                }
-                if (document.querySelector('.offset-point.selected')) {
-                    document.querySelector('.offset-point.selected').classList.remove('selected')
-                }
-            }
-        })
-    })
-}
+//                 if (document.querySelector('.popup-container.active')) {
+//                     document.querySelector('.popup-container.active').classList.remove('active')
+//                 }
+//                 if (document.querySelector('.offset-point.selected')) {
+//                     document.querySelector('.offset-point.selected').classList.remove('selected')
+//                 }
+//             }
+//         })
+//     })
+// }
 
 const burgerButton = document.querySelector('.burger-button')
 const burgerMenu = document.querySelector('.header-menu')
@@ -150,6 +153,50 @@ if (burgerButton) {
     burgerButton.addEventListener('click', (e) => {
         e.currentTarget.classList.toggle('active')
         burgerMenu.classList.toggle('active')
+    })
+}
+
+
+const partsContainer = document.querySelector('.parts-absolute')
+const partsToggleButtons = partsContainer.querySelectorAll('.primary-button')
+
+if (partsContainer) {
+    partsToggleButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const self = e.currentTarget
+
+            if (!self.classList.contains('active')) {
+                const active = partsContainer.querySelector('.primary-button.active')
+
+                if (active) { active.classList.remove('active') }
+                self.classList.add('active')
+
+            }
+
+        })
+    })
+}
+
+const toggleSettings = document.querySelectorAll('.js-toggle-settings')
+
+if (toggleSettings.length > 0) {
+    toggleSettings.forEach(container => {
+        const buttons = Array.from(container.children)
+
+        buttons.forEach(el => {
+            el.addEventListener('click', (e)=>{
+                const self = e.currentTarget
+                const next = self.nextElementSibling
+
+                
+                self.classList.remove('active')
+                if (next) {
+                    next.classList.add('active')
+                } else {
+                    self.parentElement.firstElementChild.classList.add('active')
+                }
+            })
+        })
     })
 }
 
