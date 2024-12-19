@@ -114,11 +114,9 @@ if (toggleSettings.length > 0) {
                 if (next) {
                     next.classList.add('active')
                     initSettingsAction(container.dataset.type, next)
-                    console.log(container.dataset.type)
                 } else {
                     first.classList.add('active')
                     initSettingsAction(container.dataset.type, first)
-                    console.log(container.dataset.type)
                 }
             })
         })
@@ -126,10 +124,8 @@ if (toggleSettings.length > 0) {
 }
 
 function initSettingsAction(type, item) {
-    console.log(type)
     switch (type) {
         case 'language':
-            console.log("Init")
             changeLanguage(item.dataset.lang)
           break;
           case 'fontsize':
@@ -146,18 +142,16 @@ function initSettingsAction(type, item) {
 
 function changeBackground(color) {
     if (/^#[0-9A-F]{6}$/i.test(color)) {
-        body.style.backgroundColor = color;
+        document.body.style.backgroundColor = color;
     }
 }
 
 function changeLanguage(lang) {
-    console.log(lang)
     const elements = document.querySelectorAll('[data-i18n]');
-    console.log(lang)
 
     elements.forEach(el => {
-        console.log(el)
         const key = el.dataset.i18n;
+        console.log(key)
         const text = key.split('.').reduce((o, i) => o[i], localeObject[lang]);
 
         if (text) {
@@ -167,12 +161,12 @@ function changeLanguage(lang) {
 }
 
 function changeFontSize(size) {
-    body.classList.remove('font-small', 'font-medium', 'font-large');
-    body.classList.add(`font-${size}`);
+    document.body.classList.remove('font-small', 'font-medium', 'font-large');
+    document.body.classList.add(`font-${size}`);
 }
 
 function changeTheme(theme) {
-    body.classList.toggle('dark-theme', theme === 'dark');
+    document.body.classList.toggle('dark-theme', theme === 'dark');
 }
 
 const localeObject = {
