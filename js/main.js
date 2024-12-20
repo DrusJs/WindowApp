@@ -29,11 +29,68 @@ if (headerActionButtons.length > 0) {
     })
 }
 
+const slidePanel = document.querySelector('.slide-panel')
+const slideBtn = document.querySelector('.button-slide')
 
+let isDragging = false;
+let startY = 0;
+let startBottom = 0;
 
-const titlePage = ['Амёба', 'Амёба', 'Amoeba']
+const minBottom = 60;
+const maxBottom = window.innerHeight / 2;
 
-const languageSelect = document.querySelector('.language-select')
+slidePanel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.clientY;
+    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom);
+    document.body.style.userSelect = 'none'; 
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+        const deltaY = startY - e.clientY;
+        let newBottom = startBottom + deltaY;
+
+        if (newBottom < minBottom) newBottom = minBottom;
+        if (newBottom > maxBottom) newBottom = maxBottom;
+
+        slidePanel.style.bottom = `${newBottom}px`;
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        document.body.style.userSelect = '';
+    }
+});
+
+slidePanel.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    isDragging = true;
+    startY = touch.clientY;
+    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom);
+});
+
+document.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+        const touch = e.touches[0];
+        const deltaY = startY - touch.clientY;
+        let newBottom = startBottom + deltaY;
+
+        if (newBottom < minBottom) newBottom = minBottom;
+        if (newBottom > maxBottom) newBottom = maxBottom;
+
+        slidePanel.style.bottom = `${newBottom}px`;
+    }
+});
+
+document.addEventListener('touchend', () => {
+    if (isDragging) {
+        isDragging = false;
+    }
+});
+
 
 const burgerButton = document.querySelector('.burger-button')
 const burgerMenu = document.querySelector('.header-menu')
