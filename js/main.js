@@ -37,7 +37,7 @@ let startY = 0;
 let startBottom = 90;
 
 const minBottom = 60;
-const maxBottom = window.innerHeight / 2;
+const maxBottom = window.innerHeight / 2.5;
 
 slidePanel.addEventListener('mousedown', (e) => {
     isDragging = true;

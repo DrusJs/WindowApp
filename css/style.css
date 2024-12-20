@@ -427,7 +427,7 @@ a {
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: calc(-100dvh + 90px); 
+    bottom: 0; 
     overflow: hidden;
 }
 
