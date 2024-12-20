@@ -34,7 +34,7 @@ const slideBtn = document.querySelector('.button-slide')
 
 let isDragging = false;
 let startY = 0;
-let startBottom = 0;
+let startBottom = 90;
 
 const minBottom = 60;
 const maxBottom = window.innerHeight / 2;
@@ -55,7 +55,7 @@ document.addEventListener('mousemove', (e) => {
         if (newBottom < minBottom) newBottom = minBottom;
         if (newBottom > maxBottom) newBottom = maxBottom;
 
-        slidePanel.style.bottom = `${newBottom}px`;
+        slidePanel.style.height = `${newBottom}px`;
     }
 });
 
@@ -82,7 +82,7 @@ document.addEventListener('touchmove', (e) => {
         if (newBottom < minBottom) newBottom = minBottom;
         if (newBottom > maxBottom) newBottom = maxBottom;
 
-        slidePanel.style.bottom = `${newBottom}px`;
+        slidePanel.style.height = `${newBottom}px`;
     }
 });
 

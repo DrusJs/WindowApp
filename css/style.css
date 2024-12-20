@@ -339,7 +339,7 @@ a {
     border: none;
     padding: 0;
     position: absolute;
-    bottom: 24px;
+    bottom: 110px;
     right: 24px;
 }
 
@@ -417,7 +417,6 @@ a {
     border-radius: 16px 16px 0 0;
 }
 .slide-panel {
-    height: 100dvh;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -429,6 +428,7 @@ a {
     width: 100%;
     left: 0;
     bottom: calc(-100dvh + 90px); 
+    overflow: hidden;
 }
 
 .slide-panel .button-slide {
