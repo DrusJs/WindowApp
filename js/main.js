@@ -50,6 +50,7 @@ document.addEventListener('mousemove', (e) => {
     if (isDragging) {
         const deltaY = startY - e.clientY;
         let newBottom = startBottom + deltaY;
+        console.log(deltaY, newBottom)
 
         if (newBottom < minBottom) newBottom = minBottom;
         if (newBottom > maxBottom) newBottom = maxBottom;
