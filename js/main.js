@@ -34,7 +34,7 @@ const slideBtn = document.querySelector('.button-slide')
 
 let isDragging = false;
 let startY = 0;
-let startBottom = 90;
+let startBottom = 60;
 
 const minBottom = 60;
 const maxBottom = window.innerHeight / 2.5;
