@@ -37,7 +37,7 @@ let startY = 0;
 let startBottom = 60;
 
 const minBottom = 60;
-const maxBottom = window.innerHeight / 2.5;
+let maxBottom = document.querySelector('.slide-text').innerHeight + 90
 
 slidePanel.addEventListener('mousedown', (e) => {
     isDragging = true;
