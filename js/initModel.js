@@ -1,4 +1,5 @@
-       
+import { View3D } from './view3D.js';
+
         const view3d = View3D( document.querySelector( '#view3d' ) );
         const layer = document.querySelector( '#layer' );
         const layerVisibility = document.querySelector( '#layerVisibility' );

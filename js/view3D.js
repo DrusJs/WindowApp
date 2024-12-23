@@ -23,7 +23,7 @@ import
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
         import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'; 
         
-        const View3D = ( domContainer ) =>
+        export const View3D = ( domContainer ) =>
         {		
             let width = 0;
             let height = 0;
