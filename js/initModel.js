@@ -199,7 +199,7 @@ const pointerdown = ( pointElement, text ) =>
     changePopupInfo(text)
 };
 fitToScreenButton.onclick = () => view3d.fitToScreen();
-screenshotButton.onclick = (e) => 
+screenshotButton.onclick = () => 
 {
     const _canvas = view3d.getCanvas();
     const canvas = document.createElement( 'canvas' );
@@ -211,9 +211,7 @@ screenshotButton.onclick = (e) =>
     context.drawImage( _canvas, 0, 0 );
     
     html2canvas( layer, { canvas, backgroundColor:null } ).then( () =>
-    {
-        // document.body.appendChild( canvas );
-        
+    {        
         const a = document.createElement( 'a' );
 
         a.href = canvas.toDataURL();
@@ -222,8 +220,8 @@ screenshotButton.onclick = (e) =>
     } );
 
     setTimeout(()=>{
-        e.currentTarget.classList.remove('active')
-    }, 400)
+        screenshotButton.classList.remove('active')
+    }, 200)
 };
 
 view3d.addEventListener( 'started', () =>
