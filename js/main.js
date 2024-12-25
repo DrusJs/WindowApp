@@ -1,5 +1,7 @@
 const popupCloseButtons = document.querySelectorAll('.popup-close')
 
+let language = "ru"
+
 if (popupCloseButtons.length > 0) {
     popupCloseButtons.forEach(button => {
         button.addEventListener('click', (e)=>{
@@ -32,57 +34,57 @@ if (headerActionButtons.length > 0) {
 const slidePanel = document.querySelector('.slide-panel')
 const slideBtn = document.querySelector('.button-slide')
 
-let isDragging = false;
-let startY = 0;
-let startBottom = 60;
+let isDragging = false
+let startY = 0
+let startBottom = 60
 
-const minBottom = 60;
+const minBottom = 60
 let maxBottom = document.querySelector('.slide-text').scrollHeight + 100
 
 slidePanel.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startY = e.clientY;
-    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom);
-    document.body.style.userSelect = 'none'; 
+    isDragging = true
+    startY = e.clientY
+    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom)
+    document.body.style.userSelect = 'none';
 });
 
 document.addEventListener('mousemove', (e) => {
     if (isDragging) {
-        const deltaY = startY - e.clientY;
-        let newBottom = startBottom + deltaY;
+        const deltaY = startY - e.clientY
+        let newBottom = startBottom + deltaY
         console.log(deltaY, newBottom)
 
-        if (newBottom < minBottom) newBottom = minBottom;
-        if (newBottom > maxBottom) newBottom = maxBottom;
+        if (newBottom < minBottom) newBottom = minBottom
+        if (newBottom > maxBottom) newBottom = maxBottom
 
-        slidePanel.style.height = `${newBottom}px`;
+        slidePanel.style.height = `${newBottom}px`
     }
 });
 
 document.addEventListener('mouseup', () => {
     if (isDragging) {
-        isDragging = false;
-        document.body.style.userSelect = '';
+        isDragging = false
+        document.body.style.userSelect = ''
     }
 });
 
 slidePanel.addEventListener('touchstart', (e) => {
-    const touch = e.touches[0];
-    isDragging = true;
-    startY = touch.clientY;
-    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom);
+    const touch = e.touches[0]
+    isDragging = true
+    startY = touch.clientY
+    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom)
 });
 
 document.addEventListener('touchmove', (e) => {
     if (isDragging) {
-        const touch = e.touches[0];
-        const deltaY = startY - touch.clientY;
-        let newBottom = startBottom + deltaY;
+        const touch = e.touches[0]
+        const deltaY = startY - touch.clientY
+        let newBottom = startBottom + deltaY
 
-        if (newBottom < minBottom) newBottom = minBottom;
-        if (newBottom > maxBottom) newBottom = maxBottom;
+        if (newBottom < minBottom) newBottom = minBottom
+        if (newBottom > maxBottom) newBottom = maxBottom
 
-        slidePanel.style.height = `${newBottom}px`;
+        slidePanel.style.height = `${newBottom}px`
     }
 });
 
@@ -175,21 +177,22 @@ function changeBackground(color) {
 }
 
 function changeLanguage(lang) {
-    const elements = document.querySelectorAll('[data-i18n]');
+    const elements = document.querySelectorAll('[data-i18n]')
     const active = document.querySelector('.offset-point.selected')
+    language = lang
 
     elements.forEach(el => {
         const key = el.dataset.i18n;
-        const text = key.split('.').reduce((o, i) => o[i], localeObject[lang]);
+        const text = key.split('.').reduce((o, i) => o[i], localeObject[lang])
 
         if (text) {
-            el.textContent = text;
+            el.textContent = text
         }
     });
 
     document.querySelectorAll('.offset-point').forEach((el, index) => {
         const info = localeObject[lang].model[index].title
-        el.innerHTML = info.replaceAll(' ', '<br />');
+        el.innerHTML = info.replaceAll(' ', '<br />')
     })
     
     console.log(active)
@@ -197,12 +200,12 @@ function changeLanguage(lang) {
 }
 
 function changeFontSize(size) {
-    document.body.classList.remove('font-small', 'font-medium', 'font-large');
-    document.body.classList.add(`font-${size}`);
+    document.body.classList.remove('font-small', 'font-medium', 'font-large')
+    document.body.classList.add(`font-${size}`)
 }
 
 function changeTheme() {
-    document.body.classList.toggle('dark-theme');
+    document.body.classList.toggle('dark-theme')
 }
 
 const localeObject = {

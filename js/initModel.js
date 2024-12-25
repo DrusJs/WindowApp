@@ -1,4 +1,7 @@
 import { View3D } from './view3D.js';
+import { html2canvas } from './html2canvas.esm.js';
+
+import { language } from './main.js';
 
 const view3d = View3D( document.querySelector( '#view3d' ) );
 const layer = document.querySelector( '#layer' );
@@ -9,8 +12,6 @@ const screenshotButton = document.querySelector( '#screenshot' );
 const popupContainer = document.querySelector('#popup-info')
 const popupTitle = popupContainer.querySelector('.popup-title')
 const popupText = popupContainer.querySelector('.popup-text')
-
-let language = 'ru';
 
 const json = 
 [
