@@ -1,6 +1,6 @@
 const popupCloseButtons = document.querySelectorAll('.popup-close')
 
-let language = "ru"
+export let language = "ru"
 
 if (popupCloseButtons.length > 0) {
     popupCloseButtons.forEach(button => {
