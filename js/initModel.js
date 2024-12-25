@@ -8,6 +8,7 @@ const layer = document.querySelector( '#layer' );
 const layerVisibility = document.querySelector( '#layerVisibility' );
 const fitToScreenButton = document.querySelector( '#fitToScreen' );
 const screenshotButton = document.querySelector( '#screenshot' );
+const langChange = document.getElementById( 'change-lang' )
 
 const popupContainer = document.querySelector('#popup-info')
 const popupTitle = popupContainer.querySelector('.popup-title')
@@ -223,6 +224,10 @@ screenshotButton.onclick = () =>
         screenshotButton.classList.remove('active')
     }, 200)
 };
+
+langChange.onclick = () => {
+    setTimeout( ()=>{view3d.update()}, 100 )
+}
 
 view3d.addEventListener( 'started', () =>
     {				
