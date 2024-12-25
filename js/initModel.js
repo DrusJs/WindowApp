@@ -3,7 +3,7 @@ import { html2canvas } from './html2canvas.esm.js';
 
 import { language } from './main.js';
 
-const view3d = View3D( document.querySelector( '#view3d' ) );
+export const view3d = View3D( document.querySelector( '#view3d' ) );
 const layer = document.querySelector( '#layer' );
 const layerVisibility = document.querySelector( '#layerVisibility' );
 const fitToScreenButton = document.querySelector( '#fitToScreen' );

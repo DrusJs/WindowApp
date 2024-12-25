@@ -1,3 +1,6 @@
+import { View3D } from './scripts/View3D.js';
+import { view3D } from './initModel.js';
+
 const popupCloseButtons = document.querySelectorAll('.popup-close')
 
 export let language = "ru"
@@ -32,7 +35,6 @@ if (headerActionButtons.length > 0) {
 }
 
 const slidePanel = document.querySelector('.slide-panel')
-const slideBtn = document.querySelector('.button-slide')
 
 let isDragging = false
 let startY = 0
@@ -179,6 +181,7 @@ function changeLanguage(lang) {
     const elements = document.querySelectorAll('[data-i18n]')
     const active = document.querySelector('.offset-point.selected')
     language = lang
+	view3d.update();
 
     elements.forEach(el => {
         const key = el.dataset.i18n;
