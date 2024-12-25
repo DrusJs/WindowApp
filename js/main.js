@@ -245,7 +245,8 @@ const localeObject = {
                 help: "Помощь",
                 feedback: "Обратная связь",
             },
-            title: "Амёба",        
+            title: "Амёба", 
+            slideText: "С другой стороны начало повседневной работы по формированию позиции требуют от нас анализа направлений прогрессивного развития. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности требуют определения и уточнения новых предложений. Не следует, однако забывать, что консультация с широким активом представляет собой интересный эксперимент проверки дальнейших направлений развития.",   
             setFont: {
                 small: "Маленький",
                 medium: "Средний",
@@ -304,7 +305,8 @@ const localeObject = {
             help: "Көмек",
             feedback: "Кері байланыс",
         },
-        title: "Амёба",     
+        title: "Амёба", 
+        slideText: "Екінші жағынан, позицияны қалыптастыру бойынша күнделікті жұмыстың басталуы бізден прогрессивті даму бағыттарын талдауды талап етеді. Дегенмен, тұрақты сандық өсім мен қызметіміздің ауқымы жаңа ұсыныстарды анықтауды және нақтылауды қажет ететінін ұмытпауымыз керек. Дегенмен, кең активпен кеңесу дамудың болашақ бағыттарын сынаудағы қызықты эксперимент екенін ұмытпау керек.",     
         setFont: {
             small: "Кішкентай",
             medium: "Орташа",
@@ -356,7 +358,8 @@ const localeObject = {
             help: "Help",
             feedback: "Feedback",
         },
-        title: "Amoeba",        
+        title: "Amoeba",  
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",       
         setFont: {
             small: "Small",
             medium: "Medium",
