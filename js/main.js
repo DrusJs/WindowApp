@@ -188,11 +188,6 @@ function changeLanguage(lang) {
             el.textContent = text
         }
     });
-
-    document.querySelectorAll('.offset-point').forEach((el, index) => {
-        const info = localeObject[lang].model[index].title
-        el.innerHTML = info.replaceAll(' ', '<br />')
-    })
     
     if (active) { active.click() }
 }
