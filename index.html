@@ -45,10 +45,11 @@
                                 </defs>
                             </svg>                                                   
                         </button>
-                        <button class="action-button">
+                        <button class="action-button" id="play-sound">
                             <svg class="stroke" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.52679 5.63213C4.65716 4.98681 5.24216 4.5 5.94412 4.5C6.74185 4.5 7.38856 5.12875 7.38856 5.90432C7.38856 6.67989 6.74185 7.30864 5.94412 7.30864C6.74185 7.30864 7.38856 7.93739 7.38856 8.71296C7.38856 9.48853 6.74185 10.1173 5.94412 10.1173C5.21475 10.1173 4.61162 9.59172 4.51361 8.90883C4.50444 8.84483 4.49967 8.77942 4.49967 8.71296M11.4333 4.5C11.4333 4.5 9.64414 5.7938 9.35557 8.2369M9.23922 19.6667L10.9997 18.2305M10.9997 18.2305L9.52248 16.519M10.9997 18.2305C6.21322 18.2305 2.33301 16.973 2.33301 15.4219C2.33301 13.8707 6.21322 12.6132 10.9997 12.6132C15.7861 12.6132 19.6663 13.8707 19.6663 15.4219C19.6663 16.3555 18.2607 17.1827 16.0978 17.6934M11.026 10.1173C11.9588 10.1173 12.715 9.38212 12.715 8.47528C12.715 7.56844 11.9588 6.83328 11.026 6.83328C10.0933 6.83328 9.33712 7.56841 9.33712 8.47528C9.33716 9.38212 10.0933 10.1173 11.026 10.1173ZM17.8608 6.06069C17.8608 5.19876 17.1421 4.5 16.2555 4.5C15.3689 4.5 14.6502 5.19876 14.6502 6.06069V8.55659C14.6502 9.41853 15.3689 10.1173 16.2555 10.1173C17.1421 10.1173 17.8608 9.41853 17.8608 8.55659V6.06069Z" stroke="#006397" stroke-width="1.625" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>                                                         
+                            </svg>       
+                            <audio src="" style="display: none;" id="audio"></audio>                                                
                         </button>
                         <button class="action-button active" id="layerVisibility">
                             <svg class="fill" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -101,8 +102,8 @@
                         <path d="M1 1L11 11M1 11L11 1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>                        
                 </button>
-                <h2 class="popup-title"></h2>
-                <p class="popup-text"></p>
+                <h2 class="popup-title" data-i18n="model.title"></h2>
+                <p class="popup-text" data-i18n="model.description"></p>
                 <!-- <div class="popup-actions">
                     <button class="text-button">Action 2</button>
                     <button class="text-button">Action 1</button>
