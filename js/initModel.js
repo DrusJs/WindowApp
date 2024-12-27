@@ -255,8 +255,6 @@ const pointerdown = ( pointElement, text, sound, description ) =>
     audioItem.src = `sounds/${sound}`
     audioPlay.classList.add('show')
     
-    // document.querySelector('.burger-button').classList.remove('active')
-    // document.querySelector('.header-menu').classList.remove('active')
     document.querySelector('.settings-dropdown').classList.remove('active')
 
     changePopupInfo(text, description)

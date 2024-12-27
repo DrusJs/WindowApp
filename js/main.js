@@ -37,9 +37,7 @@ const settingsContainer = document.querySelector('.settings-dropdown')
 
 if (headerActionButtons.length > 0) {
     headerActionButtons.forEach(button => {
-        button.addEventListener('click', (e)=>{
-            e.currentTarget.classList.toggle('active')
-            
+        button.addEventListener('click', (e)=>{            
             if (e.currentTarget.classList.contains('js-settings-show')) {
                 settingsContainer.classList.toggle('active')
                 burgerMenu.classList.remove('active')
@@ -54,16 +52,19 @@ if (headerActionButtons.length > 0) {
 
                 if (audioPlay.classList.contains('active')) {
                     audioItem.pause()
-                    audioPlay.classList.remove('active')
                     clearTimeout(audioInterval)
                 } else {
                     audioItem.play()
                     audioDuration = audioItem.duration
                     setTimeout(()=>{
+                        audioPlay.classList.add('active')
+                    }, 20)
+                    audioInterval = setTimeout(()=>{
                         audioPlay.classList.remove('active')
                     }, audioDuration)
                 }
             }
+            e.currentTarget.classList.toggle('active')
         })
     })
 }
@@ -186,13 +187,6 @@ if (toggleSettings.length > 0) {
             })
         })
     })
-}
-
-const soundBtn = document.getElementById('play-sound')
-
-soundBtn.onclick = () => {
-    const key = document.getElementById('popup-info').dataset.file
-    const file = key.split('.').reduce((o, i) => o[i], localeObject[lang])
 }
 
 function initSettingsAction(type, item) {
