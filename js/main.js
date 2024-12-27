@@ -57,6 +57,7 @@ if (headerActionButtons.length > 0) {
                     audioItem.currentTime = 0
                     audioItem.play()
                     audioDuration = audioItem.duration
+                    console.log(audioDuration)
                     setTimeout(()=>{
                         audioPlay.classList.add('active')
                     }, 20)
