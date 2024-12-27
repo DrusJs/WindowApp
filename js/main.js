@@ -23,8 +23,10 @@ document.addEventListener('click', (event) => {
     const isOffsetPoint = event.target.classList.contains('offset-point')    
     const popup = document.getElementById('popup-info')
     const isInsidePopup = popup && popup.contains(event.target)
+    const play = document.getElementById('play-sound')
+    const isInsidePlay = play && play.contains(event.target)
 
-    if (!isOffsetPoint && !isInsidePopup) {
+    if (!isOffsetPoint && !isInsidePopup && !isInsidePlay) {
         popup.classList.remove('active')
         popupClose()
     }
