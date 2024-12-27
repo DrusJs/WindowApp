@@ -54,6 +54,7 @@ if (headerActionButtons.length > 0) {
                     audioItem.pause()
                     clearTimeout(audioInterval)
                 } else {
+                    audioItem.currentTime = 0
                     audioItem.play()
                     audioDuration = audioItem.duration
                     setTimeout(()=>{
