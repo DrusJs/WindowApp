@@ -51,9 +51,9 @@ if (headerActionButtons.length > 0) {
                 let audioInterval
                 const audioItem = document.getElementById('audio')
                 const audioPlay = document.getElementById('play-sound')
-                
+
                 if (audioPlay.classList.contains('active')) {
-                    audioItem.stop()
+                    audioItem.pause()
                     audioPlay.classList.remove('active')
                     clearTimeout(audioInterval)
                 } else {
