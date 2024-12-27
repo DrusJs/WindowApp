@@ -56,7 +56,7 @@ if (headerActionButtons.length > 0) {
                 } else {
                     audioItem.currentTime = 0
                     audioItem.play()
-                    audioDuration = Math.round(audioItem.duration*1000)
+                    audioDuration = Math.round(audioItem.duration*1000) + 2000
 
                     setTimeout(()=>{
                         audioPlay.classList.add('active')
