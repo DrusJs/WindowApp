@@ -43,8 +43,7 @@ if (headerActionButtons.length > 0) {
             if (e.currentTarget.classList.contains('js-settings-show')) {
                 settingsContainer.classList.toggle('active')
                 burgerMenu.classList.remove('active')
-                burgerButton.classList.remove('active')
-                
+                burgerButton.classList.remove('active')      
             }
         })
     })
@@ -95,7 +94,7 @@ slidePanel.addEventListener('touchstart', (e) => {
 document.addEventListener('touchmove', (e) => {
     if (isDragging) {
         const touch = e.touches[0]
-        const deltaY = startY - touch.clientY
+        const deltaY = startY - touch.clientY + 60
         let newBottom = startBottom + deltaY
 
         if (newBottom < minBottom) newBottom = minBottom

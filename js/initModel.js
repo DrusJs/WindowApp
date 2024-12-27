@@ -257,7 +257,7 @@ const pointerdown = ( pointElement, text, sound, description ) =>
     
     // document.querySelector('.burger-button').classList.remove('active')
     // document.querySelector('.header-menu').classList.remove('active')
-    // document.querySelector('.settings-dropdown').classList.remove('active')
+    document.querySelector('.settings-dropdown').classList.remove('active')
 
     changePopupInfo(text, description)
 };
@@ -287,13 +287,23 @@ screenshotButton.onclick = () =>
     }, 200)
 };
 
+let audioDuration = 0
+let audioInterval
+
 audioPlay.onclick = () => 
 {
-    audioItem.play()
-
-    setTimeout(()=>{
+    if (audioPlay.classList.contains('active')) {
+        audioItem.stop()
         audioPlay.classList.remove('active')
-    }, 100)
+        clearTimeout(audioInterval)
+    } else {
+        audioItem.play()
+        audioDuration = audioItem.duration
+        setTimeout(()=>{
+            audioPlay.classList.remove('active')
+        }, audioDuration)
+    }
+
 };
 
 langChange.onclick = () => {
