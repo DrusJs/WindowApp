@@ -287,24 +287,6 @@ screenshotButton.onclick = () =>
     }, 200)
 };
 
-let audioDuration = 0
-let audioInterval
-
-audioPlay.onclick = () => 
-{
-    if (audioPlay.classList.contains('active')) {
-        audioItem.stop()
-        audioPlay.classList.remove('active')
-        clearTimeout(audioInterval)
-    } else {
-        audioItem.play()
-        audioDuration = audioItem.duration
-        setTimeout(()=>{
-            audioPlay.classList.remove('active')
-        }, audioDuration)
-    }
-
-};
 
 langChange.onclick = () => {
     setTimeout( ()=>{view3d.update()}, 100 )

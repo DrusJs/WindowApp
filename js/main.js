@@ -45,6 +45,25 @@ if (headerActionButtons.length > 0) {
                 burgerMenu.classList.remove('active')
                 burgerButton.classList.remove('active')      
             }
+
+            if (e.currentTarget.classList.contains('sound-btn')) {
+                let audioDuration = 0
+                let audioInterval
+                const audioItem = document.getElementById('audio')
+                const audioPlay = document.getElementById('play-sound')
+                
+                if (audioPlay.classList.contains('active')) {
+                    audioItem.stop()
+                    audioPlay.classList.remove('active')
+                    clearTimeout(audioInterval)
+                } else {
+                    audioItem.play()
+                    audioDuration = audioItem.duration
+                    setTimeout(()=>{
+                        audioPlay.classList.remove('active')
+                    }, audioDuration)
+                }
+            }
         })
     })
 }
