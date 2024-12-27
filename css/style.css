@@ -471,6 +471,13 @@ a {
     outline:solid 1px white;
 }
 
+.sound-btn {
+    display: none;
+}
+.sound-btn.show {
+    display: flex;
+}
+
 .offset-point {
     position:absolute;
     transform:translate( -50%, -50% );

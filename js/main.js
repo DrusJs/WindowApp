@@ -8,6 +8,7 @@ if (popupCloseButtons.length > 0) {
             e.currentTarget.closest('.popup-container').classList.remove('active')
             if (document.querySelector('.offset-point.selected')) {
                 document.querySelector('.offset-point.selected').classList.remove('selected')
+                document.getElementById('play-sound').classList.remove('show')
             }
         })
     })

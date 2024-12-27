@@ -22,6 +22,11 @@ const json =
             "en": "Contractile Vacuole",
             "kz": "Жиырылғыш вакуолi"
         },
+        "sound": {
+            "ru": "Сократительная вакуоль_рус.mp3",
+            "en": "Contractile Vacuole.mp3",
+            "kz": "Жиырылғыш вакуольi_каз.mp3"
+        },
         "target": "VacuoleContractile_Water",
         "localNormalPoint": {
             "x": 0.16923829059998302,
@@ -44,6 +49,11 @@ const json =
     },
     {
         "text": {
+            "ru": "Ядро_рус.mp3",
+            "en": "Nucleus.mp3",
+            "kz": "Ядро_каз.mp3"
+        },
+        "sound": {
             "ru": "Ядро",
             "en": "Nucleus",
             "kz": "Ядро"
@@ -74,6 +84,11 @@ const json =
             "en": "Uroid",
             "kz": "Уроид"
         },
+        "sound": {
+            "ru": "Уроид_рус.mp3",
+            "en": "Uroid.mp3",
+            "kz": "Уроид_каз.mp3"
+        },
         "target": "VacuoleContractile_Water001",
         "localNormalPoint": {
             "x": 0.3468913510731629,
@@ -99,6 +114,11 @@ const json =
             "ru": "Плазматическая мембрана",
             "en": "Plasma Membrane",
             "kz": "Плазмалық мембрана"
+        },
+        "sound": {
+            "ru": "Плазматическая мембрана_рус.mp3",
+            "en": "Plasma Membrane.mp3",
+            "kz": "Плазмалық мембрана_каз.mp3"
         },
         "target": "AmoebaBody_Src",
         "localNormalPoint": {
@@ -126,6 +146,11 @@ const json =
             "en": "Digestive Vacuole",
             "kz": "Асқорыту вакуолi"
         },
+        "sound": {
+            "ru": "Пищеварительная вакуоль_рус.mp3",
+            "en": "Digestive Vacuole.mp3",
+            "kz": "Асқорыту вакуолi_каз.mp3"
+        },
         "target": "Object002",
         "localNormalPoint": {
             "x": -0.021184611099566375,
@@ -152,6 +177,11 @@ const json =
             "en": "Formation of a digestive vacuole",
             "kz": "Асқорыту вакуолының түзілуі"
         },
+        "sound": {
+            "ru": "",
+            "en": "",
+            "kz": ""
+        },
         "target": "FishBody",
         "localNormalPoint": {
             "x": 0.09199668677947946,
@@ -174,6 +204,8 @@ const json =
     }
 ];
 
+const audioItem = document.getElementById('audio')
+const audioPlay = document.getElementById('play-sound')
 
 function changePopupInfo(text) {
     if (!popupContainer.classList.contains('active')) { popupContainer.classList.add('active') }
@@ -186,12 +218,14 @@ function changePopupInfo(text) {
 
 layerVisibility.onclick = ( event ) => layer.hidden = event.currentTarget.classList.contains('active');
 
-const pointerdown = ( pointElement, text ) =>
+const pointerdown = ( pointElement, text, sound ) =>
 {
     text = text.replaceAll('<br />', ' ').replaceAll('<br>', ' ')
     if (document.querySelector('.offset-point.selected')) { document.querySelector('.offset-point.selected').classList.remove('selected') }
 
     pointElement.classList.add('selected')
+    audioItem.src = `sounds/${sound}`
+    audioPlay.classList.add('show')
     
     // document.querySelector('.burger-button').classList.remove('active')
     // document.querySelector('.header-menu').classList.remove('active')
@@ -223,6 +257,15 @@ screenshotButton.onclick = () =>
     setTimeout(()=>{
         screenshotButton.classList.remove('active')
     }, 200)
+};
+
+audioPlay.onclick = () => 
+{
+    audioItem.play()
+
+    setTimeout(()=>{
+        audioPlay.classList.remove('active')
+    }, 100)
 };
 
 langChange.onclick = () => {
@@ -260,7 +303,7 @@ view3d.addEventListener( 'added', ( event ) =>
         {			
             const data = json.find( data => data.uuid == uuid );
             // pointElement.onpointerdown = ( event ) => pointerdown( event.target, data.text[ language ] );
-            pointElement.onclick = ( event ) => pointerdown( event.target, data.text[ language ] );
+            pointElement.onclick = ( event ) => pointerdown( event.target, data.text[ language ], data.sound[ language ]);
         }
     } );
 } );
