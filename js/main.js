@@ -6,13 +6,29 @@ if (popupCloseButtons.length > 0) {
     popupCloseButtons.forEach(button => {
         button.addEventListener('click', (e)=>{
             e.currentTarget.closest('.popup-container').classList.remove('active')
-            if (document.querySelector('.offset-point.selected')) {
-                document.querySelector('.offset-point.selected').classList.remove('selected')
-                document.getElementById('play-sound').classList.remove('show')
-            }
+            popupClose()
         })
     })
 }
+
+function popupClose() {
+    if (document.querySelector('.offset-point.selected')) {
+        document.querySelector('.offset-point.selected').classList.remove('selected')
+        document.getElementById('play-sound').classList.remove('show')
+    }
+}
+
+
+document.addEventListener('click', (event) => {
+    const isOffsetPoint = event.target.classList.contains('offset-point')    
+    const popup = document.getElementById('popup-info')
+    const isInsidePopup = popup && popup.contains(event.target)
+
+    if (!isOffsetPoint && !isInsidePopup) {
+        popup.classList.remove('active')
+        popupClose()
+    }
+});
 
 const headerActionButtons = document.querySelectorAll('.action-button')
 const settingsContainer = document.querySelector('.settings-dropdown')
