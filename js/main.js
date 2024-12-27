@@ -89,7 +89,7 @@ slidePanel.addEventListener('mousedown', (e) => {
 
 document.addEventListener('mousemove', (e) => {
     if (isDragging) {
-        const deltaY = startY - e.clientY + 60
+        const deltaY = startY - e.clientY
         let newBottom = startBottom + deltaY
 
         if (newBottom < minBottom) newBottom = minBottom
@@ -110,13 +110,13 @@ slidePanel.addEventListener('touchstart', (e) => {
     const touch = e.touches[0]
     isDragging = true
     startY = touch.clientY
-    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom)
+    startBottom = parseInt(window.getComputedStyle(slidePanel).height)
 });
 
 document.addEventListener('touchmove', (e) => {
     if (isDragging) {
         const touch = e.touches[0]
-        const deltaY = startY - touch.clientY + 60
+        const deltaY = startY - touch.clientY
         let newBottom = startBottom + deltaY
 
         if (newBottom < minBottom) newBottom = minBottom
