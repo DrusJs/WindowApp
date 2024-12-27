@@ -68,7 +68,7 @@ slidePanel.addEventListener('mousedown', (e) => {
 
 document.addEventListener('mousemove', (e) => {
     if (isDragging) {
-        const deltaY = startY - e.clientY
+        const deltaY = startY - e.clientY + 60
         let newBottom = startBottom + deltaY
 
         if (newBottom < minBottom) newBottom = minBottom
