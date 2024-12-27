@@ -57,7 +57,7 @@ if (headerActionButtons.length > 0) {
                     audioItem.currentTime = 0
                     audioItem.play()
                     audioDuration = Math.round(audioItem.duration*1000)
-                    
+
                     setTimeout(()=>{
                         audioPlay.classList.add('active')
                     }, 20)
@@ -83,7 +83,7 @@ let maxBottom = document.querySelector('.slide-text').scrollHeight + 100
 slidePanel.addEventListener('mousedown', (e) => {
     isDragging = true
     startY = e.clientY
-    startBottom = parseInt(window.getComputedStyle(slidePanel).bottom)
+    startBottom = parseInt(window.getComputedStyle(slidePanel).height)
     document.body.style.userSelect = 'none';
 });
 
