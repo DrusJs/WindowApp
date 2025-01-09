@@ -29,6 +29,7 @@ document.addEventListener('click', (event) => {
 
     if (!isInsidePopup && !isInsidePlay) {
         popup.classList.remove('active')
+        play.classList.remove('active')
     }
 
     if (!isInsideSlide) {
