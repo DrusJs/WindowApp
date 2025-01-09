@@ -76,12 +76,12 @@ a {
 }
 
 .header-inner {
-    height: 82px;
+    height: 56px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    padding: 10px 30px;
+    padding: 2px 30px;
     background-color: #E5F1FE;
 }
 
@@ -304,7 +304,7 @@ a {
     position: relative;
     overflow: hidden;
     min-height: 400px;
-    max-height: calc(100dvh - 80px);
+    max-height: calc(100dvh - 56px);
 }
 
 .popup-container {
@@ -419,8 +419,8 @@ a {
 .slide-panel {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 20px 20px;
+    gap: 10px;
+    padding: 8px 20px;
     background-color: #016397;
     color: #FFFFFF;
     border-radius: 16px 16px 0 0;
@@ -436,7 +436,7 @@ a {
     border: none;
     position: absolute;
     pointer-events: none;
-    top: 12px;
+    top: 2px;
     left: 50%;
     transform: translateX(-50%);
 }

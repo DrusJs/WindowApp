@@ -19,16 +19,23 @@ function popupClose() {
 }
 
 
-document.addEventListener('click', (event) => {
-    const isOffsetPoint = event.target.classList.contains('offset-point')    
-    const popup = document.getElementById('popup-info')
+document.addEventListener('click', (event) => { 
+    const popup = document.querySelector('.settings-dropdown')
     const isInsidePopup = popup && popup.contains(event.target)
-    const play = document.getElementById('play-sound')
+    const play = document.querySelector('.js-settings-show')
     const isInsidePlay = play && play.contains(event.target)
+    const slide = document.querySelector('.slide-panel')
+    const isInsideSlide = slide && slide.contains(event.target)
 
-    if (!isOffsetPoint && !isInsidePopup && !isInsidePlay) {
+    if (!isInsidePopup && !isInsidePlay) {
         popup.classList.remove('active')
-        popupClose()
+    }
+
+    if (!isInsideSlide) {
+        slide.style.transition = '200ms'
+        slide.style.height = '40px'
+
+        setTimeout(()=>{ slide.style.transition = 'none' }, 210)
     }
 });
 
@@ -75,9 +82,9 @@ const slidePanel = document.querySelector('.slide-panel')
 
 let isDragging = false
 let startY = 0
-let startBottom = 60
+let startBottom = 40
 
-const minBottom = 60
+const minBottom = 40
 let maxBottom = document.querySelector('.slide-text').scrollHeight + 100
 
 slidePanel.addEventListener('mousedown', (e) => {
