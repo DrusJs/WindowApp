@@ -32,7 +32,7 @@ document.addEventListener('click', (event) => {
         play.classList.remove('active')
     }
 
-    if (!isInsideSlide) {
+    if (!isInsideSlide && !isDragging) {
         slide.style.transition = '200ms'
         slide.style.height = '40px'
 
