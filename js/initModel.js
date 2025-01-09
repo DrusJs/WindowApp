@@ -248,9 +248,15 @@ layerVisibility.onclick = ( event ) => layer.hidden = event.currentTarget.classL
 
 const pointerdown = ( pointElement, text, sound, description ) =>
 {
+    if (pointElement.classList.contains('selected')) {
+        document.querySelector('.popup-container').classList.remove('active')
+        audioPlay.classList.remove('show')
+        pointElement.classList.remove('selected')
+        return
+    }
+    
     text = text.replaceAll('<br />', ' ').replaceAll('<br>', ' ')
     if (document.querySelector('.offset-point.selected')) { document.querySelector('.offset-point.selected').classList.remove('selected') }
-
     pointElement.classList.add('selected')
     audioItem.src = `sounds/${sound}`
     audioPlay.classList.add('show')
