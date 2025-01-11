@@ -103,6 +103,7 @@ export const View3D = ( domContainer ) =>
 		controls.maxDistance = 100;
 		controls.maxPolarAngle = controls.minPolarAngle = Math.PI / 180 * 50;
 		controls.update();
+		controls.saveState();
 
 		render(); 
 		
@@ -272,6 +273,12 @@ export const View3D = ( domContainer ) =>
 	const context = canvas.getContext( '2d' );
 		
 	instance.fromJSON = fromJSON;
+	instance.reset = () =>
+	{
+		controls.reset();
+		
+		fitToScreen();
+	};
 	instance.fitToScreen = fitToScreen;
 	instance.update = () => needsRender = true;
 	instance.getCanvas = () => 

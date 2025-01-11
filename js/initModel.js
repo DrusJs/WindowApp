@@ -265,7 +265,7 @@ const pointerdown = ( pointElement, text, sound, description ) =>
 
     changePopupInfo(text, description)
 };
-fitToScreenButton.onclick = () => view3d.fitToScreen();
+fitToScreenButton.onclick = () => view3d.reset();
 screenshotButton.onclick = () => 
 {
     const _canvas = view3d.getCanvas();
