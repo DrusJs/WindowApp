@@ -521,7 +521,7 @@
                 if( visible )
                 {
                     pointElement.style.left = x + 'px';
-                    pointElement.style.top = y-82 + 'px';
+                    pointElement.style.top = y + 'px';
                     
                     if( type == 'offset' ) {
                         const data = json.find( data => data.point_id == uuid );
@@ -540,7 +540,7 @@
                             const angle = Math.atan2( dy, dx ) * 180 / Math.PI;
                             
                             lineElement.style.left = x + 'px';
-                            lineElement.style.top = (y-82) + 'px';	
+                            lineElement.style.top = y + 'px';	
                             lineElement.style.width = distance + 'px';
                             lineElement.style.transform = 'rotate(' + angle + 'deg)';
                             
