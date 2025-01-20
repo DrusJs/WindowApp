@@ -494,7 +494,7 @@
                 {			
                     const data = json.find( data => data.uuid == uuid );
 
-                    pointElement.onclick = ( event ) => pointerdown( event.target, data.text[ language ], data.sound[ language ], data.description[ language ]);
+                    pointElement.onclick = ( event ) => pointerdown( event.target, data?.[ 'title_' + language ] ?? '', data?.[ 'media_' + language ] ?? '', data?.[ 'description_' + language ] ?? '');
                 }
             } );
         } );
