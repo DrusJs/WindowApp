@@ -526,8 +526,8 @@
                     pointElement.style.top = y-82 + 'px';
                     
                     if( type == 'offset' ) {
-                        const data = json.find( data => data.uuid == uuid );
-                        pointElement.innerHTML = data.text[ language ];
+                        const data = json.find( data => data.point_id == uuid );
+                        pointElement.innerHTML = data?.[ 'title_' + language ] ?? '';
                     }
                     
                     if( lineElement )
