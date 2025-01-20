@@ -423,6 +423,7 @@
             text = text.replaceAll('<br />', ' ').replaceAll('<br>', ' ')
             if (document.querySelector('.offset-point.selected')) { document.querySelector('.offset-point.selected').classList.remove('selected') }
             pointElement.classList.add('selected')
+            console.log(sound)
             audioItem.src = `sounds/${sound}`
             audioPlay.classList.add('show')
             
@@ -491,7 +492,7 @@
                 else if( type == 'offset' )
                 {			
                     const data = json.find( data => data.uuid == uuid );
-
+                    console.log(data)
                     pointElement.onclick = ( event ) => pointerdown( event.target, data?.[ 'title_' + language ] ?? '', data?.[ 'media_' + language ] ?? '', data?.[ 'description_' + language ] ?? '');
                 }
             } );
