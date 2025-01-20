@@ -277,12 +277,12 @@
         }
     </script>
 
-    <script type="module" src="js/view3D.js"></script>
+    <script type="module" src="/js/view3D.js"></script>
     <script type="module">
-        import { View3D } from 'js/view3D.js';
-        import { html2canvas } from 'js/html2canvas.esm.js';
+        import { View3D } from '/js/view3D.js';
+        import { html2canvas } from '/js/html2canvas.esm.js';
 
-        import { language } from 'js/main.js';
+        import { language } from '/js/main.js';
 
         export const view3d = View3D( document.querySelector( '#view3d' ) );
         const layer = document.querySelector( '#layer' );
