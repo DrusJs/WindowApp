@@ -1,5 +1,17 @@
 const popupCloseButtons = document.querySelectorAll('.popup-close')
 
+const burgerButton = document.querySelector('.burger-button')
+const burgerMenu = document.querySelector('.header-menu')
+
+if (burgerButton) {
+    burgerButton.addEventListener('click', (e) => {
+        
+        e.currentTarget.classList.toggle('active')
+        burgerMenu.classList.toggle('active')
+        settingsContainer.classList.remove('active')
+    })
+}
+
 export let language = "ru"
 
 if (popupCloseButtons.length > 0) {
@@ -81,77 +93,70 @@ if (headerActionButtons.length > 0) {
 
 const slidePanel = document.querySelector('.slide-panel')
 
-let isDragging = false
-let startY = 0
-let startBottom = 40
 
-const minBottom = 40
-let maxBottom = document.querySelector('.slide-text').scrollHeight + 100
-
-slidePanel.addEventListener('mousedown', (e) => {
-    isDragging = true
-    startY = e.clientY
-    startBottom = parseInt(window.getComputedStyle(slidePanel).height)
-    document.body.style.userSelect = 'none';
-});
-
-document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        const deltaY = startY - e.clientY
-        let newBottom = startBottom + deltaY
-
-        if (newBottom < minBottom) newBottom = minBottom
-        if (newBottom > maxBottom) newBottom = maxBottom
-
-        slidePanel.style.height = `${newBottom}px`
-    }
-});
-
-document.addEventListener('mouseup', () => {
-    if (isDragging) {
-        isDragging = false
-        document.body.style.userSelect = ''
-    }
-});
-
-slidePanel.addEventListener('touchstart', (e) => {
-    const touch = e.touches[0]
-    isDragging = true
-    startY = touch.clientY
-    startBottom = parseInt(window.getComputedStyle(slidePanel).height)
-});
-
-document.addEventListener('touchmove', (e) => {
-    if (isDragging) {
+if (slidePanel) {
+    let isDragging = false
+    let startY = 0
+    let startBottom = 40
+    
+    const minBottom = 40
+    let maxBottom = document.querySelector('.slide-text').scrollHeight + 100
+    
+    slidePanel.addEventListener('mousedown', (e) => {
+        isDragging = true
+        startY = e.clientY
+        startBottom = parseInt(window.getComputedStyle(slidePanel).height)
+        document.body.style.userSelect = 'none';
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            const deltaY = startY - e.clientY
+            let newBottom = startBottom + deltaY
+    
+            if (newBottom < minBottom) newBottom = minBottom
+            if (newBottom > maxBottom) newBottom = maxBottom
+    
+            slidePanel.style.height = `${newBottom}px`
+        }
+    });
+    
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false
+            document.body.style.userSelect = ''
+        }
+    });
+    
+    slidePanel.addEventListener('touchstart', (e) => {
         const touch = e.touches[0]
-        const deltaY = startY - touch.clientY
-        let newBottom = startBottom + deltaY
+        isDragging = true
+        startY = touch.clientY
+        startBottom = parseInt(window.getComputedStyle(slidePanel).height)
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            const touch = e.touches[0]
+            const deltaY = startY - touch.clientY
+            let newBottom = startBottom + deltaY
+    
+            if (newBottom < minBottom) newBottom = minBottom
+            if (newBottom > maxBottom) newBottom = maxBottom
+    
+            slidePanel.style.height = `${newBottom}px`
+        }
+    });
+    
+    document.addEventListener('touchend', () => {
+        if (isDragging) {
+            isDragging = false;
+        }
+    });
 
-        if (newBottom < minBottom) newBottom = minBottom
-        if (newBottom > maxBottom) newBottom = maxBottom
-
-        slidePanel.style.height = `${newBottom}px`
-    }
-});
-
-document.addEventListener('touchend', () => {
-    if (isDragging) {
-        isDragging = false;
-    }
-});
-
-
-const burgerButton = document.querySelector('.burger-button')
-const burgerMenu = document.querySelector('.header-menu')
-
-if (burgerButton) {
-    burgerButton.addEventListener('click', (e) => {
-        
-        e.currentTarget.classList.toggle('active')
-        burgerMenu.classList.toggle('active')
-        settingsContainer.classList.remove('active')
-    })
 }
+
+
 
 
 const partsContainer = document.querySelector('.parts-absolute')
