@@ -166,9 +166,10 @@ if (slidePanel) {
 
 
 const partsContainer = document.querySelector('.parts-absolute')
-const partsToggleButtons = partsContainer.querySelectorAll('.primary-button')
 
 if (partsContainer) {
+    const partsToggleButtons = partsContainer.querySelectorAll('.primary-button')
+    
     partsToggleButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const self = e.currentTarget
