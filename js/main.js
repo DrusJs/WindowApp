@@ -31,6 +31,8 @@ function popupClose() {
 }
 
 
+
+
 document.addEventListener('click', (event) => { 
     const popup = document.querySelector('.settings-dropdown')
     const isInsidePopup = popup && popup.contains(event.target)
@@ -39,16 +41,20 @@ document.addEventListener('click', (event) => {
     const slide = document.querySelector('.slide-panel')
     const isInsideSlide = slide && slide.contains(event.target)
 
-    if (!isInsidePopup && !isInsidePlay) {
-        popup.classList.remove('active')
-        play.classList.remove('active')
+    if (popup) {
+        if (!isInsidePopup && !isInsidePlay) {
+            popup.classList.remove('active')
+            play.classList.remove('active')
+        }
     }
 
-    if (!isInsideSlide && !isDragging) {
-        slide.style.transition = '200ms'
-        slide.style.height = '40px'
-
-        setTimeout(()=>{ slide.style.transition = 'none' }, 210)
+    if (slide) {
+        if (!isInsideSlide && !isDragging) {
+            slide.style.transition = '200ms'
+            slide.style.height = '40px'
+    
+            setTimeout(()=>{ slide.style.transition = 'none' }, 210)
+        }
     }
 });
 
