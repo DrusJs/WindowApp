@@ -724,6 +724,9 @@ input[type="text"] + .show-password {
         min-height: 82px;
         padding: 10px 16px;
     }
+    .modules-grid {
+        grid-template-columns: 1fr 1fr;
+    }
     .popup-container {
         top: 16px;
         right: 16px;
@@ -769,6 +772,19 @@ input[type="text"] + .show-password {
     .settings-dropdown {
         right: 16px;
     }
+}
+
+@media (max-width: 620px) {
+    .main-flex {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .main-flex .parts-absolute {
+        flex-direction: row;
+        flex-wrap: wrap;
+    } 
 }
 
 
