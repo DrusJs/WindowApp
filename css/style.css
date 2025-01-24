@@ -617,6 +617,9 @@ body.dark-theme .popup-close svg path {
     max-width: 500px;
     margin: 0 auto;
     padding: 60px 0;
+    min-height: calc(100dvh - 56px);
+    display: flex;
+    align-items: center;
 }
 
 .form-inner {

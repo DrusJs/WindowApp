@@ -315,6 +315,14 @@ export const localeObject = {
                 4: "Раздел 4",
                 5: "Раздел 5",
                 6: "Раздел 6"
+            },
+            login: {
+                email: "Почта",
+                pass: "Пароль",
+                passRepeat: "Повторите пароль",
+                privacy: "Я подтверждаю, что ознакомился с политикой конфидециальности",
+                btnSubmit: "Войти",
+                btnReg: "Зарегистрироваться", 
             }
             
     },
@@ -379,6 +387,14 @@ export const localeObject = {
             4: "4 Бөлім",
             5: "5 Бөлім",
             6: "6 Бөлім"
+        },
+        login: {
+            email: "Пошта",
+            pass: "Құпия сөз",
+            passRepeat: "Құпия сөзді қайталаңыз",
+            privacy: "Мен құпиялылық саясатын оқығанымды растаймын",
+            btnSubmit: "Жүйеге кіру",
+            btnReg: "Тіркелу", 
         }
     },
     
@@ -442,6 +458,14 @@ export const localeObject = {
             4: "Part 4",
             5: "Part 5",
             6: "Part 6"
+        },
+        login: {
+            email: "Email",
+            pass: "Password",
+            passRepeat: "Repeat apssword",
+            privacy: "I confirm that I have read the privacy policy",
+            btnSubmit: "Login",
+            btnReg: "Registration", 
         }
     }
 }
