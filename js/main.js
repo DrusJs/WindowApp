@@ -309,8 +309,12 @@ export const localeObject = {
                 actionB: "Action 2"
             },
             sections: {
-                first: "Раздел 1",
-                second: "Раздел 2"
+                1: "Раздел 1",
+                2: "Раздел 2",
+                3: "Раздел 3",
+                4: "Раздел 4",
+                5: "Раздел 5",
+                6: "Раздел 6"
             }
             
     },
@@ -369,8 +373,12 @@ export const localeObject = {
             dark: "Қараңғы",
         },
         sections: {
-            first: "1 Бөлім",
-            second: "2 Бөлім"
+            1: "1 Бөлім",
+            2: "2 Бөлім",
+            3: "3 Бөлім",
+            4: "4 Бөлім",
+            5: "5 Бөлім",
+            6: "6 Бөлім"
         }
     },
     
@@ -428,8 +436,12 @@ export const localeObject = {
             dark: "Dark",
         },
         sections: {
-            first: "Part 1",
-            second: "Part 2"
+            1: "Part 1",
+            2: "Part 2",
+            3: "Part 3",
+            4: "Part 4",
+            5: "Part 5",
+            6: "Part 6"
         }
     }
 }
