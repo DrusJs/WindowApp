@@ -106,7 +106,7 @@ if (slidePanel) {
     let startBottom = 40
     
     const minBottom = 40
-    let maxBottom = document.querySelector('.slide-text').scrollHeight + 46
+    let maxBottom = document.querySelector('.slide-text').scrollHeight + 60
     
     slidePanel.addEventListener('mousedown', (e) => {
         isDragging = true
