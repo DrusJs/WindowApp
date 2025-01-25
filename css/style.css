@@ -333,6 +333,11 @@ a {
     flex-direction: column;
     gap: 16px;
 }
+
+.header-actions.hide-ui-model .header-menu {
+    display: none !important;
+}
+
 .focus-button {
     background-color: transparent;
     cursor: pointer;
@@ -345,6 +350,9 @@ a {
 
 .main-flex .parts-absolute {
     position: static;
+}
+.main-flex .parts-absolute .primary-button {
+    min-width: 200px;
 }
 .main-flex {
     display: flex;
