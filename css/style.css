@@ -633,6 +633,7 @@ body.dark-theme .popup-close svg path {
     min-height: calc(100dvh - 56px);
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .form-inner {
