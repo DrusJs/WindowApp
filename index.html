@@ -577,9 +577,10 @@
                 if( lineElement )
                     layer.appendChild( lineElement );
 
-                if (document.querySelector('.offset-point.selected')) {
-                    document.querySelector('.offset-point.selected').click()
-                    document.querySelector('.offset-point.selected').click()
+                const active = document.querySelector('.offset-point.selected')
+                if (active) {
+                    active.click()
+                    active.click()
                 }
             } );
         } );
