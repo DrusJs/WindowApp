@@ -100,8 +100,9 @@ if (headerActionButtons.length > 0) {
 const slidePanel = document.querySelector('.slide-panel')
 
 
+let isDragging = false
+
 if (slidePanel) {
-    let isDragging = false
     let startY = 0
     let startBottom = 40
     

@@ -367,6 +367,10 @@ a {
     gap: 20px;   
 }
 
+.modules-grid a {
+    color: #000000;
+}
+
 .module-item {
     display: flex;
     flex-direction: column;

@@ -255,8 +255,8 @@
                         <path d="M2 2H82" stroke="#C1E0FF" stroke-width="4" stroke-linecap="round"/>
                     </svg>                    
                 </button>
-                <h2 class="title" data-i18n="title">Амёба</h2>
-                <p class="slide-text" data-i18n="slideText">С другой стороны начало повседневной работы по формированию позиции требуют от нас анализа направлений прогрессивного развития. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности требуют определения и уточнения новых предложений. Не следует, однако забывать, что консультация с широким активом представляет собой интересный эксперимент проверки дальнейших направлений развития.</p>
+                <h2 class="title">Амёба</h2>
+                <p class="slide-text">С другой стороны начало повседневной работы по формированию позиции требуют от нас анализа направлений прогрессивного развития. Не следует, однако забывать, что постоянный количественный рост и сфера нашей активности требуют определения и уточнения новых предложений. Не следует, однако забывать, что консультация с широким активом представляет собой интересный эксперимент проверки дальнейших направлений развития.</p>
             </div>
         </main>
 
@@ -292,6 +292,8 @@
         const popupContainer = document.querySelector('#popup-info')
         const popupTitle = popupContainer.querySelector('.popup-title')
         const popupText = popupContainer.querySelector('.popup-text')
+        const slideTitle = document.querySelector('.slide-panel .title')
+        const slideText = document.querySelector('.slide-panel .slide-text')
 
         const json = 
         [
@@ -405,6 +407,9 @@
         function changePopupInfo(text,desc) {
             if (!popupContainer.classList.contains('active')) { popupContainer.classList.add('active') }
 
+            
+            slideTitle.innerHTML = text
+            slideText.innerHTML = desc
             popupTitle.innerHTML = text
             popupText.innerHTML = desc
         }
