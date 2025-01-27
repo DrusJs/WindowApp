@@ -249,8 +249,6 @@ function changeLanguage(lang) {
             el.textContent = text
         }
     });
-    
-    if (active) { active.click() }
 }
 
 function changeFontSize(size) {
