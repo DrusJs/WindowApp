@@ -576,6 +576,10 @@
                 
                 if( lineElement )
                     layer.appendChild( lineElement );
+
+                if (document.querySelector('.offset-point.selected')) {
+                    document.querySelector('.offset-point.selected').click()
+                }
             } );
         } );
     </script>
