@@ -33,31 +33,6 @@ function popupClose() {
 
 
 
-document.addEventListener('click', (event) => { 
-    const popup = document.querySelector('.settings-dropdown')
-    const isInsidePopup = popup && popup.contains(event.target)
-    const play = document.querySelector('.js-settings-show')
-    const isInsidePlay = play && play.contains(event.target)
-    const slide = document.querySelector('.slide-panel')
-    const isInsideSlide = slide && slide.contains(event.target)
-
-    if (popup) {
-        if (!isInsidePopup && !isInsidePlay) {
-            popup.classList.remove('active')
-            play.classList.remove('active')
-        }
-    }
-
-    if (slide) {
-        if (!isInsideSlide && !isDragging) {
-            slide.style.transition = '200ms'
-            slide.style.height = '40px'
-    
-            setTimeout(()=>{ slide.style.transition = 'none' }, 210)
-        }
-    }
-});
-
 const headerActionButtons = document.querySelectorAll('.action-button')
 const settingsContainer = document.querySelector('.settings-dropdown')
 
@@ -98,6 +73,7 @@ if (headerActionButtons.length > 0) {
 }
 
 const slidePanel = document.querySelector('.slide-panel')
+
 
 
 let isDragging = false
@@ -162,6 +138,31 @@ if (slidePanel) {
     });
 
 }
+
+document.addEventListener('click', (event) => { 
+    const popup = document.querySelector('.settings-dropdown')
+    const isInsidePopup = popup && popup.contains(event.target)
+    const play = document.querySelector('.js-settings-show')
+    const isInsidePlay = play && play.contains(event.target)
+    const slide = document.querySelector('.slide-panel')
+    const isInsideSlide = slide && slide.contains(event.target)
+
+    if (popup) {
+        if (!isInsidePopup && !isInsidePlay) {
+            popup.classList.remove('active')
+            play.classList.remove('active')
+        }
+    }
+
+    if (slide) {
+        if (!isInsideSlide && !isDragging) {
+            slide.style.transition = '200ms'
+            slide.style.height = '40px'
+    
+            setTimeout(()=>{ slide.style.transition = 'none' }, 210)
+        }
+    }
+});
 
 
 
